@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="paytm-cordova-plugin"
+    version="1.0.0">
+    <name>Paytm Cordova Plugin</name>
+    <description>Paytm Plugin allowa you to integrate paytm paymentgateway in Cordova or ionic appliaction </description>
+    <keywords>PayTM, Payment, Gateway, ionic, paytm PG</keywords>
+    <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
+    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+
+    <!-- <preference name="GENERATE_URL" />
+    <preference name="VERIFY_URL" /> -->
+    <preference name="MERCHANT_ID" />
+    <preference name="INDUSTRY_TYPE_ID" />
+    <preference name="CHANNEL_ID" />
+    <preference name="WEBSITE" />
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+        <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+        <clobbers target="PaytmPlugin" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="PaytmPlugin">
+          <param name="android-package" value="com.plugin.PaytmPlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+
+    <config-file target="res/values/paytmInfo.xml" parent="/*">
+        <!-- <string name="paytm_gen_url">$GENERATE_URL</string>
+        <string name="paytm_chk_url">$VERIFY_URL</string> -->
+        <string name="paytm_merchant_id">$MERCHANT_ID</string>
+        <string name="paytm_industry_type_id">$INDUSTRY_TYPE_ID</string>
+        <string name="paytm_channel_id">$CHANNEL_ID</string>
+        <string name="paytm_website">$WEBSITE</string>
+    </config-file>
+
+     <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="application">
+        <activity android:name="com.paytm.pgsdk.PaytmPGActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|keyboard"/>
+    </config-file>
+
+     <source-file src="src/android/PaytmSDK/PGSDK_V2.1.jar" target-dir="libs" />
+      <source-file src="src/android/com/plugin/PaytmPlugin.java" target-dir="src/com/plugin/" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="MyCordovaPlugin" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="MyCordovaPlugin">
+                <param name="ios-package" value="MyCordovaPlugin" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/MyCordovaPlugin.h" />
+        <source-file src="src/ios/MyCordovaPlugin.m" />
+    </platform>
+</plugin>

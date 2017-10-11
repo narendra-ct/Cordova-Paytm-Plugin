@@ -1,0 +1,12 @@
+{
+  "name": "cordova-plugin-paytm",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-paytm",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "A Paytm Payment Cordova Plugin"
+}
