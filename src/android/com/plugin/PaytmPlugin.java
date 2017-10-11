@@ -7,8 +7,6 @@ import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
-import org.apache.cordova.PluginResult.Status;
-import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -19,13 +17,12 @@ import android.widget.Toast;
 import com.paytm.pgsdk.PaytmOrder;
 import com.paytm.pgsdk.PaytmPGService;
 import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
-import com.sun.org.apache.xpath.internal.operations.String;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class MyCordovaPlugin extends CordovaPlugin {
+public class PaytmPlugin extends CordovaPlugin {
   private static final String TAG = "PaytmPlugin";
 
   private PaytmPGService Service;
@@ -124,7 +121,7 @@ public class MyCordovaPlugin extends CordovaPlugin {
 
     Service.initialize(Order, null);
 
-    Service.startPaymentTransaction(this, true, true,
+    Service.startPaymentTransaction(webView.getContext(), true, true,
       new PaytmPaymentTransactionCallback() {
 
         @Override

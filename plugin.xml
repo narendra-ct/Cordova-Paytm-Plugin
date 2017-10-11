@@ -30,7 +30,6 @@
         </feature>
       </config-file>
 
-
     <config-file target="res/values/paytmInfo.xml" parent="/*">
         <!-- <string name="paytm_gen_url">$GENERATE_URL</string>
         <string name="paytm_chk_url">$VERIFY_URL</string> -->
