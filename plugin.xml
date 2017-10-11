@@ -30,6 +30,7 @@
         </feature>
       </config-file>
 
+    <source-file src="src/android/res/values/paytmInfo.xml" target-dir="res/values" />
     <config-file target="res/values/paytmInfo.xml" parent="/*">
         <!-- <string name="paytm_gen_url">$GENERATE_URL</string>
         <string name="paytm_chk_url">$VERIFY_URL</string> -->

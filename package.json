@@ -8,5 +8,16 @@
       "ios"
     ]
   },
-  "description": "A Paytm Payment Cordova Plugin"
+  "description": "A Paytm Payment Cordova Plugin",
+  "license": "MIT",
+  "repo": "https://github.com/narendra-ct/Cordova-Paytm-Plugin.git",
+  "issue": "https://github.com/narendra-ct/Cordova-Paytm-Plugin/issues",
+  "keywords": [
+      "PayTM",
+      " Payment",
+      " Gateway",
+      " Mobile",
+      " Cordova PayTM",
+      " Cordova Payment"
+  ]
 }
