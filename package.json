@@ -1,8 +1,8 @@
 {
-  "name": "cordova-plugin-paytm",
+  "name": "paytm-cordova-plugin",
   "version": "1.0.0",
   "cordova": {
-    "id": "cordova-plugin-paytm",
+    "id": "paytm-cordova-plugin",
     "platforms": [
       "android",
       "ios"

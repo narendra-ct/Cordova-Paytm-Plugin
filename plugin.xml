@@ -6,8 +6,8 @@
     <name>Paytm Cordova Plugin</name>
     <description>Paytm Plugin allowa you to integrate paytm paymentgateway in Cordova or ionic appliaction </description>
     <keywords>PayTM, Payment, Gateway, ionic, paytm PG</keywords>
-    <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
-    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+    <repo>https://github.com/narendra-ct/Cordova-Paytm-Plugin.git</repo>
+    <issue>https://github.com/narendra-ct/Cordova-Paytm-Plugin/issues</issue>
 
     <!-- <preference name="GENERATE_URL" />
     <preference name="VERIFY_URL" /> -->
