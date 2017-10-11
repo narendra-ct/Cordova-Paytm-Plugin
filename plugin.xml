@@ -53,19 +53,58 @@
       <source-file src="src/android/com/plugin/PaytmPlugin.java" target-dir="src/com/plugin/" />
     </platform>
 
+
+
     <!-- ios -->
     <platform name="ios">
         <js-module src="www/plugin.js" name="plugin">
             <runs/>
-            <clobbers target="MyCordovaPlugin" />
+            <clobbers target="PaytmPlugin" />
         </js-module>
         <config-file target="config.xml" parent="/*">
-            <feature name="MyCordovaPlugin">
-                <param name="ios-package" value="MyCordovaPlugin" onload="true" />
+            <feature name="PaytmPlugin">
+                <param name="ios-package" value="PaytmPlugin" onload="true" />
+                <plugin name="PaytmPlugin" value="PaytmPlugin"/>
             </feature>
         </config-file>
 
-        <header-file src="src/ios/MyCordovaPlugin.h" />
-        <source-file src="src/ios/MyCordovaPlugin.m" />
+           
+    <!-- <config-file target="*-Info.plist" parent="PayTMGenerateChecksumURL">
+        <string>$GENERATE_URL</string>
+    </config-file>
+    <config-file target="*-Info.plist" parent="PayTMVerifyChecksumURL">
+        <string>$VERIFY_URL</string>
+    </config-file> -->
+    <config-file target="*-Info.plist" parent="PayTMMerchantID">
+        <string>$MERCHANT_ID</string>
+    </config-file>
+    <config-file target="*-Info.plist" parent="PayTMIndustryTypeID">
+        <string>$INDUSTRY_TYPE_ID</string>
+    </config-file>
+    <config-file target="*-Info.plist" parent="PayTMWebsite">
+        <string>$WEBSITE</string>
+    </config-file>
+        <config-file target="*-Info.plist" parent="PayTMChannelId">
+        <string>$CHANNEL_ID</string>
+    </config-file>
+
+        
+        <header-file src="src/ios/Paytm/include/PaymentsSDK.h"/>
+        <header-file src="src/ios/Paytm/include/PGMerchantConfiguration.h"/>
+        <header-file src="src/ios/Paytm/include/PGOrder.h"/>
+        <header-file src="src/ios/Paytm/include/PGServerEnvironment.h"/>
+        <header-file src="src/ios/Paytm/include/PGTransactionViewController.h"/>
+        <header-file src="src/ios/Paytm/include/Reachability.h"/>
+        <header-file src="src/ios/PaytmPlugin.h" />
+        <source-file src="src/ios/PaytmPlugin.m" />
+
+        <!-- Paytm framework -->
+        <source-file src="src/ios/Paytm/libPaymentsSDK.a" framework="true"/>
+        <framework src="SystemConfiguration.framework" />
+
+
+
+
+
     </platform>
 </plugin>
